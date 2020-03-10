@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perleweb/centered_wiev.dart';
-import 'package:perleweb/widget_app_bar.dart';
-import 'package:perleweb/widget_drawer.dart';
+import 'package:perleweb/widgets/widget_app_bar.dart';
+import 'package:perleweb/widgets/widget_drawer.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
 class ViewNarukvice extends StatefulWidget {
@@ -74,7 +74,7 @@ class _ViewNarukviceState extends State<ViewNarukvice> {
     return CenteredView(
       child: Scaffold(
         appBar: widgetAppBar(width: width, context: context),
-        endDrawer: width < 600 ? getDrawer() : null,
+        endDrawer: width < 600 ? getDrawer(context) : null,
         body: Container(
             color: Colors.white,
             child: ResponsiveGridList(

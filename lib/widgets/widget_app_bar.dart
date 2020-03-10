@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:perleweb/view_home.dart';
-import 'package:perleweb/view_narukvice.dart';
+import 'package:perleweb/views/view_home.dart';
+import 'package:perleweb/views/view_kontakt.dart';
+import 'package:perleweb/views/view_login.dart';
+import 'package:perleweb/views/view_narukvice.dart';
 
 widgetAppBar({BuildContext context, double width}) {
   return AppBar(
@@ -13,9 +15,7 @@ widgetAppBar({BuildContext context, double width}) {
       child: Container(
         child: Text(
           'La La Per',
-          style: GoogleFonts.cookie(
-            fontSize: 40,
-          ),
+          style: GoogleFonts.cookie(fontSize: 40),
         ),
       ),
     ),
@@ -28,9 +28,18 @@ widgetAppBar({BuildContext context, double width}) {
                   Navigator.pushReplacement(
                       context, MaterialPageRoute(builder: (context) => ViewNarukvice()));
                 }),
-            getButton(title: 'OGRLICE', onPressed: () {}),
-            getButton(title: 'KONTAKT', onPressed: () {}),
-            getButton(title: 'LOGIN', onPressed: () {}),
+            getButton(
+                title: 'KONTAKT',
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (context) => ViewKontakt()));
+                }),
+            getButton(
+                title: 'LOGIN',
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (context) => ViewLogin()));
+                }),
           ],
     elevation: 0,
     backgroundColor: Colors.white,
